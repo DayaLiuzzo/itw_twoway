@@ -12,7 +12,7 @@ export class UserService {
   create(createUserDto: CreateUserDto) {
    const newUser: User = {...createUserDto, id: this.idcounter++ };
     this.users.push(newUser);
-   return 
+   return `user created with id ${newUser.id}`;
   }
 
   findAll() {

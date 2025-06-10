@@ -1,15 +1,22 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePromptDto } from './dto/create-prompt.dto';
 import { UpdatePromptDto } from './dto/update-prompt.dto';
+import { Prompt } from './entities/prompt.entity';
 
 @Injectable()
 export class PromptService {
+
+    private prompts: Prompt[] = [];
+    private idcounter = 1;
+
   create(createPromptDto: CreatePromptDto) {
-    return 'This action adds a new prompt';
+       const newPrompt: Prompt = {...createPromptDto, id: this.idcounter++, createdAt: new Date(), updatedAt: new Date() };
+        this.prompts.push(newPrompt);
+       return `This action returns a #${newPrompt.id} prompt`;
   }
 
   findAll() {
-    return `This action returns all prompt`;
+    return this.prompts
   }
 
   findOne(id: number) {

@@ -1,5 +1,5 @@
 export class Prompt {
-    id: string;
+    id: number;
     title: string;
     body: string;
     tags: string[];

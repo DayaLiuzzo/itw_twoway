@@ -9,3 +9,21 @@ Content-Type: application/json
   "email": "hey@gmail.com",
   "password": "John Doe"
 }
+
+
+###
+
+get http://localhost:3000/prompt
+
+###
+
+POST http://localhost:3000/prompt
+Content-Type: application/json
+
+{
+  "title": "Hello World",
+  "body": "This is a test prompt",
+  "tags": ["test", "example"],
+  "authorId": "1"
+}
+
